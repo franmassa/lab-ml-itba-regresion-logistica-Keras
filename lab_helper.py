@@ -261,6 +261,7 @@ def plot_boundaries_keras(X_train, y_train, score, probability_func, degree=None
     ax.set_ylim(yy.min(), yy.max())
     ax.set_xticks(())
     ax.set_yticks(())
-    ax.text(xx.max() - .3, yy.min() + .3, ('%.2f' % score).lstrip('0'),
-            size=40, horizontalalignment='right')
+    if score is not None:
+        ax.text(xx.max() - .3, yy.min() + .3, ('%.2f' % score).lstrip('0'),
+                size=40, horizontalalignment='right')
     
