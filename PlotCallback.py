@@ -100,7 +100,8 @@ class PlotCallback(keras.callbacks.Callback):
         return
     
     def on_epoch_end(self, epoch, logs={}):
-        self.acc.append(logs.get('acc'))
+        print(logs)
+        self.acc.append(logs.get('accuracy'))
         self.loss.append(logs.get('loss'))
         self.plotBoundary()
         return
