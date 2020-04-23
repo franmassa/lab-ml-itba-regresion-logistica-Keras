@@ -56,7 +56,8 @@ class PlotCallback(keras.callbacks.Callback):
         Z = Z.reshape(self.Z_shape)
         ax.contour(self.X, self.Y, Z, (0.5,), colors='k', linewidths=0.5)
         axAcc.plot(self.acc)
-        if len(self.acc)==0:
+        
+        if len(self.acc)==0 or self.acc[0] is None:
             loss, acc = model.evaluate(self.data_poly, self.labels, verbose=0)
             axAcc.set_title(f'Accuracy: {acc:.4f}')
             axLoss.set_title(f'Cross Entropy: {loss:.4f}')
