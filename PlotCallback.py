@@ -1,5 +1,5 @@
 from matplotlib import pyplot as plt
-import keras
+import tensorflow.keras as keras
 import numpy as np
 from IPython.display import clear_output
 from matplotlib.gridspec import GridSpec
